@@ -1,7 +1,27 @@
 .App {
   text-align: center;
 }
+/* 글 전체 글꼴 */
+body{
+  font-family: 'nanumsquare';
+}
+/* Navigation Bar 네비게이션 바*/
+.black-nav {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  color: white;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+}
 
+.list {
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
