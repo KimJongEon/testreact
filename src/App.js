@@ -6,15 +6,29 @@ import './App.css';
 
 
 function App() {
-
-
-
 // ES6 destructuring 문법
 //state는 변수 대신 쓰는 데이터 저장공간, useState()를 이용해 만들어야함
 //state에 데이터를 저장하는 이유 : HTML이 자동으로 재렌더링, HTML이 새로고침 없이도 변경됨
 let [글제목, 글제목변경] = useState(['남자 코트 추천', '신발 추천', '강남 우동 맛집']);
 let likeCnt = 0;
 let [하트, 하트변경] = useState(likeCnt);
+
+//글 제목 변경 함수
+//리액트 대 원칙 : immutable data - state 데이터는 직접 수정이 되면 안된다.
+// function 제목바꾸기(){
+//   // 글제목변경(['여자 코트 추천', '신발 추천', '강남 우동 맛집']) - 하드코딩
+//   var newArray = [...글제목]; //deep copy 필요
+//   newArray[0] = '여자 코트 추천';
+//   글제목변경(newArray);
+// }
+
+//정렬 함수 sort
+function 정렬(){
+  var newArray = [...글제목]; // deep copy
+  newArray.sort(); // 정렬
+  console.log(newArray);
+  글제목변경(newArray);
+}
 
 // posts라는 변수에 데이터를 저장
 let posts = '맛집 리스트';
@@ -25,6 +39,7 @@ let posts = '맛집 리스트';
       <div className="black-nav">
         <div>개발 Blog</div>
       </div>
+      <button onClick={ 정렬 }>정렬 버튼</button>
       <div className="list">
         {/* posts라는 변수를 통해 데이터 바인딩 */}
         <h3> { 글제목[0] + '[글 제목 배열 0]' } <span onClick={ ()=>{ 하트변경(하트 + 1)} }>❤️</span> {하트} </h3>
