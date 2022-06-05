@@ -33,6 +33,8 @@ function 정렬(){
 // posts라는 변수에 데이터를 저장
 let posts = '맛집 리스트';
 // let mainStyle = {color : 'blue' , fontSize : '100px'} ;
+// return ()안에는 하나의 html 태그만 가능
+// ex) <div></div> 하나
   return (
     <div className="App">
       {/* className 문법임 */}
@@ -58,12 +60,40 @@ let posts = '맛집 리스트';
         <p>글 내용</p>
         <hr/>
       </div>
-
+      
+      {/* 글 상세 modal */}
+      <Modal/>
+      
       {/* <div style= { mainStyle } > css 테스트</div>
       <img src= { logo } alt = '로고이미지'/>
       <img src= { son } alt = '손 이미지'/> */}
     </div>
   );
+}
+
+// Component로 만들기 좋은 것들
+// 반복출현하는 HTML 덩어리들, 자주 변경되는 HTML UI들
+
+// Component 단점
+// stete 쓸 때 복잡해짐
+// 상위 component에서 만든 state를 쓰려면 props 문법 이용해야함
+// function App()에 만든 변수를 Modal에 전달 해줘야됨
+
+{/* HTML을 한 단어로 줄여서 쓸 수 있는 방법
+: 리액트의 Component 문법 */}
+// Component의 관습 : 소문자로 시작
+{/* 글 상세 modal */}
+function Modal(){
+  return(
+    // Fragment 괄호 : 아무의미 없이 묶을 수 있음 <></>
+    <>
+    <div className="Modal">
+      <h2>제목</h2>
+      <p>내용</p>
+      <p>상세내용</p>
+    </div>
+    </>
+  )
 }
 
 export default App;

@@ -5,6 +5,14 @@
 body{
   font-family: 'nanumsquare';
 }
+
+/* 글 상세 */
+.modal {
+  margin-top: 20px;
+  padding : 20px;
+  background : #eee;
+}
+
 /* Navigation Bar 네비게이션 바*/
 .black-nav {
   background-color: black;
